@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+    <package name="refer" namespace="/refer"  extends="struts-default">
+    	
+    	<action name="showRefer" class="com.gh.crm.consult.action.ReferAction" method="showRefer">
+    		<result name="success" >/html/refer/listRefer.jsp</result>
+    	</action>
+    	
+    	<action name="addRefer" class="com.gh.crm.consult.action.ReferAction" method="addRefer">
+    		<result name="success" >/html/refer/listRefer.jsp</result>
+    	</action>
+    	
+    	<action name="getRefer" class="com.gh.crm.consult.action.ReferAction" method="getRefer">
+    		<result name="success" >/html/refer/queryRefer.jsp</result>
+    	</action>
+    </package>
+    
+    <package name="follow" namespace="/follow"  extends="struts-default">
+    	
+    	<action name="followAction" class="com.gh.crm.resources.action.StaffAction" >
+    		<result name="success" >/html/frame.html</result>
+    		<result name="error" type="redirect">/html/login.jsp</result>
+    		<result name="input" >/html/staff/updPwd.jsp</result>
+    	</action>
+    	
+    </package> 
+    
+</struts>

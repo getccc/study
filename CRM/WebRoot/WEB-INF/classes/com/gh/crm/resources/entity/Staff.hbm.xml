@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.gh.crm.resources.entity.Staff" table="staff" lazy="false">
+        <id name="staffId" column="staffId">
+            <generator class="assigned" />
+        </id>
+        <property name="loginName" column="loginName" length="100"> 
+        </property>
+        <property name="loginPwd" column="loginPwd" length="100">
+        </property>
+        <property name="staffName" column="staffName" length="100">
+        </property>
+        <property name="gender">
+            <column name="gender" length="20" />
+        </property>
+        <property name="onDutyDate">
+            <column name="onDutyDate" length="19" />
+        </property>
+        
+        <many-to-one name="Post" class="com.gh.crm.resources.entity.Post" fetch="select">
+            <column name="postId" />
+        </many-to-one>
+        
+        <set name="Outflows" inverse="true">
+            <key>
+                <column name="staffId" />
+            </key>
+            <one-to-many class="com.gh.crm.swork.entity.Outflow" />
+        </set>
+        <set name="Stations" inverse="true">
+            <key>
+                <column name="staffId" />
+            </key>
+            <one-to-many class="com.gh.crm.swork.entity.Station" />
+        </set>
+        <set name="Refers" inverse="true">
+            <key>
+                <column name="staffId" />
+            </key>
+            <one-to-many class="com.gh.crm.consult.entity.Refer" />
+        </set>
+        <set name="Follows" inverse="true" lazy="false">
+            <key>
+                <column name="staffId" />
+            </key>
+            <one-to-many class="com.gh.crm.consult.entity.Follow" />
+        </set>
+    </class>
+</hibernate-mapping>

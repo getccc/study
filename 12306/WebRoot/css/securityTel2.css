@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+input.error {
+	border: 1px solid red;
+}
+
+select.error {
+	border: 1px solid red;
+}
+
+label.error {
+	background: url(../img/ots/icon_wrong.png) left center no-repeat;
+	padding: 0;
+	padding-left: 20px;
+	height: 20px;
+	color: #FF2626;
+	line-height: 20px;
+}
+
+label.checked {
+	background: url("../img/ots/icon_ok.png") no-repeat 0px 0px;
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.gh.crm.teaching.entity.CourseType" table="courseType" catalog="crm" lazy="false">
+        <id name="courseTypeId">
+            <column name="courseTypeId" />
+            <generator class="assigned" />
+        </id>
+        <property name="courseCost" type="java.lang.Double">
+            <column name="courseCost" precision="22" scale="0" />
+        </property>
+        <property name="total" type="int">
+            <column name="total" />
+        </property>
+        <property name="courseName">
+            <column name="courseName" length="500" />
+        </property>
+        <property name="remark">
+            <column name="remark" length="5000" />
+        </property>
+        
+        
+        <set name="Refers" inverse="true">
+            <key>
+                <column name="courseTypeId" />
+            </key>
+            <one-to-many class="com.gh.crm.consult.entity.Refer" />
+        </set>
+        <set name="Classes" inverse="true">
+            <key>
+                <column name="courseTypeId" />
+            </key>
+            <one-to-many class="com.gh.crm.teaching.entity.Classes" />
+        </set>
+    </class>
+</hibernate-mapping>

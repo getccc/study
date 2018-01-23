@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+    <package name="classes" namespace="/classes"  extends="struts-default,json-default">
+    	
+    	<action name="showClasses" class="com.gh.crm.teaching.action.ClassesAction" method="showClasses" >
+    		<result name="success" >/html/classesm/listClass.jsp</result>
+    	</action>
+    	
+    	<action name="addClasses" class="com.gh.crm.teaching.action.ClassesAction" method="addClasses" >
+    		<result name="success" >/html/classesm/listClass.jsp</result>
+    	</action>
+    	
+    	<action name="updateClasses" class="com.gh.crm.teaching.action.ClassesAction" method="updateClasses" >
+    		<result name="success" >/html/classesm/listClass.jsp</result>
+    	</action>
+    	
+    	<action name="listClasses" class="com.gh.crm.teaching.action.ClassesAction" method="listClasses" >
+    		 <result type="json">  
+                <param name="root">result</param>  
+            </result>  
+    	</action>
+    	
+    </package>
+    
+    <package name="courseType" namespace="/courseType"  extends="struts-default">
+    	
+    	<action name="showCourseType" class="com.gh.crm.teaching.action.CourseTypeAction" method="showCourseType" >
+    		<result name="success" >/html/course/listCourseType.jsp</result>
+    	</action>
+    	
+    	<action name="addCourseType" class="com.gh.crm.teaching.action.CourseTypeAction" method="addCourseType" >
+    		<result name="success" >/html/course/listCourseType.jsp</result>
+    	</action>
+    	
+    	<action name="updateCourseType" class="com.gh.crm.teaching.action.CourseTypeAction" method="updateCourseType" >
+    		<result name="success" >/html/course/listCourseType.jsp</result>
+    	</action>
+    	
+    	<action name="AllCourseType" class="com.gh.crm.teaching.action.CourseTypeAction" method="AllCourseType" >
+    		<result name="success" >/html/classesm/addOrEditClass.jsp</result>
+    	</action>
+    	
+    	<action name="listCourseType" class="com.gh.crm.teaching.action.CourseTypeAction" method="listCourseType" >
+    		<result name="success" >/html/refer/addOrEditRefer.jsp</result>
+    	</action>
+    	
+    </package> 
+    
+</struts>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.gh.crm.swork.entity.Station" table="station" catalog="crm" lazy="false">
+        <id name="stationId">
+            <column name="stationId" />
+            <generator class="assigned" />
+        </id>
+        <property name="flag">
+            <column name="flag" />
+        </property>
+        <property name="createDate">
+            <column name="createDate" length="19" />
+        </property>
+        
+        
+         <many-to-one name="ClassByAfterClassId" class="com.gh.crm.teaching.entity.Classes" fetch="select">
+            <column name="afterClassId" length="50" />
+        </many-to-one>
+        <many-to-one name="ClassByBeforeClassId" class="com.gh.crm.teaching.entity.Classes" fetch="select">
+            <column name="beforeClassId" length="50" />
+        </many-to-one>
+        <many-to-one name="Staff" class="com.gh.crm.resources.entity.Staff" fetch="select">
+            <column name="staffId" />
+        </many-to-one>
+        <many-to-one name="Student" class="com.gh.crm.swork.entity.Student" fetch="select">
+            <column name="studentId" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

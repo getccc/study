@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+    <package name="student" namespace="/student"  extends="struts-default">
+    	
+    	<action name="showStudent" class="com.gh.crm.swork.action.StudentAction" method="showStudent" >
+    		<result name="success" >/html/student/listStudent.jsp</result>
+    	</action>
+    	
+    	<action name="addStudent" class="com.gh.crm.swork.action.StudentAction" method="addStudent" >
+    		<result name="success" >/html/student/listStudent.jsp</result>
+    	</action>
+    	
+    </package>
+    
+    <package name="station" namespace="/station"  extends="struts-default">
+    	
+    	<action name="showStation" class="com.gh.crm.swork.action.StationAction"  method="showStation">
+    		<result name="success" >/html/role/listRolePri.jsp</result>
+    	</action>
+    	
+    	<action name="addStation" class="com.gh.crm.swork.action.StationAction"  method="addStation">
+    		<result name="success" >/html/role/listRolePri.jsp</result>
+    	</action>
+    	
+    </package> 
+    
+    <package name="outflow" namespace="/outflow"  extends="struts-default">
+    	
+    	<action name="showOutflow" class="com.gh.crm.swork.action.OutflowAction"  method="showOutflow">
+    		<result name="success" >/html/privilege/listPrivilege.jsp</result>
+    	</action>
+    	
+    	<action name="addOutflow" class="com.gh.crm.swork.action.OutflowAction"  method="addOutflow">
+    		<result name="success" >/html/privilege/addlostPrivilege.jsp</result>
+    	</action>
+    	
+    </package> 
+    
+</struts>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.gh.crm.consult.entity.Follow" table="follow"
+		catalog="crm" lazy="false">
+		<id name="followId">
+			<column name="followId" />
+			<generator class="assigned" />
+		</id>
+		<property name="followTime">
+			<column name="followTime" length="19" />
+		</property>
+		<property name="content">
+			<column name="content" length="1000" />
+		</property>
+		
+		
+		<many-to-one name="Staff" class="com.gh.crm.resources.entity.Staff"
+			fetch="select">
+			<column name="staffId" />
+		</many-to-one>
+		<many-to-one name="Refer" class="com.gh.crm.consult.entity.Refer"
+			fetch="select">
+			<column name="referId" />
+		</many-to-one>
+	
+	</class>
+</hibernate-mapping>

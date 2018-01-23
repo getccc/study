@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+    <package name="staff" namespace="/staff"  extends="struts-default,json-default">
+    	<action name="staffAction" class="com.gh.crm.resources.action.StaffAction" >
+    		<result name="success" >/html/frame.html</result>
+    		<result name="error" type="redirect">/html/login.jsp</result>
+    		<result name="input" >/html/staff/updPwd.jsp</result>
+    	</action>
+    	
+    	<action name="showAllAction" class="com.gh.crm.resources.action.DepartmentAction" method="showAll" >
+    		<result name="success">/html/department/listDepartment.jsp</result>
+    	</action>
+    	
+    	<action name="departmentAction" class="com.gh.crm.resources.action.DepartmentAction" >
+    		<result name="success">/html/department/listDepartment.jsp</result>
+    	</action>
+    	
+    	<action name="postAction" class="com.gh.crm.resources.action.PostAction" >
+    		<result name="success" >/html/post/listPost.jsp</result>
+    	</action>
+    	
+    	<action name="allPostAction" class="com.gh.crm.resources.action.PostAction" method="allPost" >
+    		<result name="success" >/html/staff/addOrEditStaff.jsp</result>
+    	</action>
+    	
+    	<action name="AllDepartment" class="com.gh.crm.resources.action.DepartmentAction" method="AllDepartment" >
+    		<result name="success" >/html/post/addOrEditPost.jsp</result>
+    	</action>
+    	
+    	<action name="showPagePosts" class="com.gh.crm.resources.action.PostAction" method="showPagePosts" >
+    		<result name="success" >/html/post/listPost.jsp</result>
+    	</action>
+    	
+    	<action name="AllDept" class="com.gh.crm.resources.action.DepartmentAction" method="AllDept" >
+    		<result name="success" >/html/staff/addOrEditStaff.jsp</result>
+    	</action>
+    	
+    	<action name="AllDepts" class="com.gh.crm.resources.action.DepartmentAction" method="AllDepts" >
+    		<result name="success">/html/staff/listStaff.jsp</result>
+    	</action>
+    	
+    	
+    	<action name="listPost" class="com.gh.crm.resources.action.PostAction" method="execute" >
+    		 <result type="json">  
+                <param name="root">result</param>  
+            </result>  
+    	</action>
+    	
+    	<action name="addStaff" class="com.gh.crm.resources.action.StaffAction" method="addStaff" >
+    		<result name="success" >/html/staff/listStaff.jsp</result>
+    	</action>
+    	
+    	<action name="listStaff" class="com.gh.crm.resources.action.StaffAction" method="listStaff" >
+    		<result name="success" >/html/staff/listStaff.jsp</result>
+    	</action>
+    	
+    	<action name="updateStaff" class="com.gh.crm.resources.action.StaffAction" method="updateStaff" >
+    		<result name="success" type="redirect" >/html/staff/updateStaff.jsp</result>
+    	</action>
+    	
+    	<action name="editStaff" class="com.gh.crm.resources.action.StaffAction" method="editStaff" >
+    		<result name="success"  >/html/staff/listStaff.jsp</result>
+    	</action>
+    	
+    </package>
+    
+</struts>

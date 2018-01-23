@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.gh.crm.swork.entity.Student" table="student" catalog="crm" lazy="false">
+        <id name="studentId">
+            <column name="studentId" />
+            <generator class="assigned" />
+        </id>
+       
+        <property name="name">
+            <column name="name" />
+        </property>
+        <property name="gender">
+            <column name="gender" />
+        </property>
+        <property name="mustTuition">
+            <column name="mustTuition" />
+        </property>
+        <property name="actualTuition" type="int">
+            <column name="actualTuition" />
+        </property>
+        <property name="telephone">
+            <column name="telephone" />
+        </property>
+        <property name="identity">
+            <column name="identity" />
+        </property>
+        <property name="qq">
+            <column name="qq" />
+        </property>
+        <property name="email">
+            <column name="email" />
+        </property>
+        <property name="school">
+            <column name="school" />
+        </property>
+        <property name="education">
+            <column name="education" />
+        </property>
+        <property name="professional">
+            <column name="professional" />
+        </property>
+        <property name="status">
+            <column name="status" />
+        </property>
+        <property name="inschooltime">
+            <column name="inschooltime" />
+        </property>
+        <property name="address">
+            <column name="address" />
+        </property>
+        <property name="remark">
+            <column name="remark" />
+        </property>
+        <property name="homeTelephone">
+            <column name="homeTelephone" />
+        </property>
+        <property name="homeUser">
+            <column name="homeUser" />
+        </property>
+        
+         <many-to-one name="Refer" class="com.gh.crm.consult.entity.Refer" fetch="select">
+            <column name="referId" unique="true" />
+        </many-to-one>
+        <many-to-one name="Classes" class="com.gh.crm.teaching.entity.Classes" fetch="select">
+            <column name="classId" length="50" />
+        </many-to-one>
+        
+        <set name="Stations" inverse="true">
+            <key>
+                <column name="studentId" />
+            </key>
+            <one-to-many class="com.gh.crm.swork.entity.Station" />
+        </set>
+        <set name="Graduates" inverse="true">
+            <key>
+                <column name="studentId" unique="true" />
+            </key>
+            <one-to-many class="com.gh.crm.employment.entity.Graduate" />
+        </set>
+        <set name="Outflows" inverse="true">
+            <key>
+                <column name="studentId" />
+            </key>
+            <one-to-many class="com.gh.crm.swork.entity.Outflow" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="refer" location="0,0" size="0,0">
+    <action name="referAction" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="frame.html" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="login.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="updPwd.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="follow" location="0,0" size="0,0">
+    <action name="followAction" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="frame.html" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="login.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="updPwd.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="frame.html" path="/html/frame.html" location="3077,220" size="150,55" />
+  <webResource name="login.jsp" path="/html/login.jsp" location="2839,10" size="150,55" />
+  <webResource name="updPwd.jsp" path="/html/staff/updPwd.jsp" location="85,220" size="150,55" />
+  <webResource name="listDepartment.jsp" path="/html/department/listDepartment.jsp" location="9,395" size="150,55" />
+  <webResource name="listPost.jsp" path="/html/post/listPost.jsp" location="367,1130" size="150,55" />
+  <webResource name="addOrEditStaff.jsp" path="/html/staff/addOrEditStaff.jsp" location="590,1025" size="150,55" />
+  <webResource name="addOrEditPost.jsp" path="/html/post/addOrEditPost.jsp" location="2060,920" size="150,55" />
+  <webResource name="listStaff.jsp" path="/html/staff/listStaff.jsp" location="1347,920" size="150,55" />
+  <webResource name="updateStaff.jsp" path="/html/staff/updateStaff.jsp" location="1825,920" size="150,55" />
+</Struts2Diagram>
+

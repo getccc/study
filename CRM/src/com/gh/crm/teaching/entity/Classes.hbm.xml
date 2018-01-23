@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.gh.crm.teaching.entity.Classes" table="classes" catalog="crm" lazy="false">
+        <id name="classId">
+            <column name="classId" length="50" />
+            <generator class="assigned" />
+        </id>
+       
+        <property name="name">
+            <column name="name" length="50" />
+        </property>
+        <property name="beginTime">
+            <column name="beginTime" length="19" />
+        </property>
+        <property name="endTime">
+            <column name="endTime" length="19" />
+        </property>
+        <property name="status">
+            <column name="status" length="20" />
+        </property>
+        <property name="totalCount" type="int">
+            <column name="totalCount" />
+        </property>
+        <property name="upgradeCount" type="int">
+            <column name="upgradeCount" />
+        </property>
+        <property name="changeCount" type="int">
+            <column name="changeCount" />
+        </property>
+        <property name="runoffCount" type="int">
+            <column name="runoffCount" />
+        </property>
+        <property name="remark">
+            <column name="remark" length="500" />
+        </property>
+        <property name="uploadTime">
+            <column name="uploadTime" length="19" />
+        </property>
+        <property name="uploadPath">
+            <column name="uploadPath" length="200" />
+        </property>
+        <property name="uploadFilename">
+            <column name="uploadFilename" length="100" />
+        </property>
+        
+         <many-to-one name="CourseType" class="com.gh.crm.teaching.entity.CourseType" fetch="select">
+            <column name="courseTypeId" />
+        </many-to-one>
+        
+        <set name="Students" inverse="true">
+            <key>
+                <column name="classId" length="50" />
+            </key>
+            <one-to-many class="com.gh.crm.swork.entity.Student" />
+        </set>
+        <set name="Refers" inverse="true">
+            <key>
+                <column name="classId" length="50" />
+            </key>
+            <one-to-many class="com.gh.crm.consult.entity.Refer" />
+        </set>
+        <set name="StationsForBeforeClassId" inverse="true">
+            <key>
+                <column name="beforeClassId" length="50" />
+            </key>
+            <one-to-many class="com.gh.crm.swork.entity.Station" />
+        </set>
+        <set name="StationsForAfterClassId" inverse="true">
+            <key>
+                <column name="afterClassId" length="50" />
+            </key>
+            <one-to-many class="com.gh.crm.swork.entity.Station" />
+        </set>
+        <set name="Graduates" inverse="true">
+            <key>
+                <column name="classId" length="50" />
+            </key>
+            <one-to-many class="com.gh.crm.employment.entity.Graduate" />
+        </set>
+    </class>
+</hibernate-mapping>

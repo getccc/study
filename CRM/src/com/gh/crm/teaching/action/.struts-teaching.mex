@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="classes" location="0,0" size="0,0">
+    <action name="showClasses" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listClass.jsp" />
+      </result>
+    </action>
+    <action name="addClasses" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listClass.jsp" />
+      </result>
+    </action>
+    <action name="updateClasses" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listClass.jsp" />
+      </result>
+    </action>
+    <action name="listClasses" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="courseType" location="0,0" size="0,0">
+    <action name="showCourseType" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listCourseType.jsp" />
+      </result>
+    </action>
+    <action name="addCourseType" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listCourseType.jsp" />
+      </result>
+    </action>
+    <action name="updateCourseType" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listCourseType.jsp" />
+      </result>
+    </action>
+    <action name="AllCourseType" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addOrEditClass.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="frame.html" path="/html/frame.html" location="89,345" size="150,55" />
+  <webResource name="login.jsp" path="/html/login.jsp" location="341,100" size="150,55" />
+  <webResource name="updPwd.jsp" path="/html/staff/updPwd.jsp" location="597,345" size="150,55" />
+  <webResource name="listClass.jsp" path="/html/classesm/listClass.jsp" location="0,0" size="0,0" />
+  <webResource name="listCourseType.jsp" path="/html/course/listCourseType.jsp" location="0,0" size="0,0" />
+  <webResource name="addOrEditClass.jsp" path="/html/classesm/addOrEditClass.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

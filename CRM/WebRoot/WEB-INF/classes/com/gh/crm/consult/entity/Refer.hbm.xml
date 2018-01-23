@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.gh.crm.consult.entity.Refer" table="refer" catalog="crm" lazy="false">
+        <id name="referId" >
+            <column name="referId" />
+            <generator class="assigned" />
+        </id>
+       
+        <property name="name">
+            <column name="name" />
+        </property>
+        <property name="telephone">
+            <column name="telephone" />
+        </property>
+        <property name="qq">
+            <column name="qq" />
+        </property>
+        <property name="createDate">
+            <column name="createDate" length="19" />
+        </property>
+        <property name="intentionLevel">
+            <column name="intentionLevel" length="50" />
+        </property>
+        <property name="source">
+            <column name="source" length="100" />
+        </property>
+        <property name="status">
+            <column name="status" length="10" />
+        </property>
+        <property name="remark">
+            <column name="remark" length="200" />
+        </property>
+        
+         <many-to-one name="CourseType" class="com.gh.crm.teaching.entity.CourseType" fetch="select">
+            <column name="courseTypeId" />
+        </many-to-one>
+        <many-to-one name="Staff" class="com.gh.crm.resources.entity.Staff" fetch="select">
+            <column name="staffId" />
+        </many-to-one>
+        <many-to-one name="Classes" class="com.gh.crm.teaching.entity.Classes" fetch="select">
+            <column name="classId" length="50" />
+        </many-to-one>
+        
+        
+        <set name="Students" inverse="true">
+            <key>
+                <column name="referId" unique="true" />
+            </key>
+            <one-to-many class="com.gh.crm.swork.entity.Student" />
+        </set>
+        <set name="Follows" inverse="true">
+            <key>
+                <column name="referId" />
+            </key>
+            <one-to-many class="com.gh.crm.consult.entity.Follow" />
+        </set>
+        
+    </class>
+</hibernate-mapping>

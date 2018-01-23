@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.gh.train.servlet.UserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PassengerServlet</servlet-name>
+    <servlet-class>com.gh.train.servlet.PassengerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TrainServlet</servlet-name>
+    <servlet-class>com.gh.train.servlet.TrainServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderServlet</servlet-name>
+    <servlet-class>com.gh.train.servlet.OrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PayServlet</servlet-name>
+    <servlet-class>com.gh.train.pay.PayServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BackServlet</servlet-name>
+    <servlet-class>com.gh.train.pay.BackServlet</servlet-class>
+  </servlet>
+  <servlet>
+   <servlet-name>AlibabaPayServlet</servlet-name>
+    <servlet-class>com.gh.train.pay.AlibabaPayServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AlibabaBankServlet</servlet-name>
+    <servlet-class>com.gh.train.pay.AlibabaBankServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckServlet</servlet-name>
+    <servlet-class>com.gh.train.pay.CheckServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/UserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PassengerServlet</servlet-name>
+    <url-pattern>/PassengerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TrainServlet</servlet-name>
+    <url-pattern>/TrainServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderServlet</servlet-name>
+    <url-pattern>/OrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PayServlet</servlet-name>
+    <url-pattern>/PayServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BackServlet</servlet-name>
+    <url-pattern>/BackServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AlibabaPayServlet</servlet-name>
+    <url-pattern>/AlibabaPayServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AlibabaBankServlet</servlet-name>
+    <url-pattern>/AlibabaBankServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckServlet</servlet-name>
+    <url-pattern>/CheckServlet</url-pattern>
+  </servlet-mapping>
+  
+
+
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>com.gh.train.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>charset</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+  <welcome-file-list>
+    <welcome-file>login.html</welcome-file>
+  </welcome-file-list>
+</web-app>

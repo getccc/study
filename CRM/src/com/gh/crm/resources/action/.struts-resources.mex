@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="staff" location="0,0" size="0,0">
+    <action name="staffAction" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="frame.html" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="login.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="updPwd.jsp" />
+      </result>
+    </action>
+    <action name="showAllAction" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listDepartment.jsp" />
+      </result>
+    </action>
+    <action name="departmentAction" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listDepartment.jsp" />
+      </result>
+    </action>
+    <action name="postAction" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listPost.jsp" />
+      </result>
+    </action>
+    <action name="allPostAction" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addOrEditStaff.jsp" />
+      </result>
+    </action>
+    <action name="AllDepartment" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addOrEditPost.jsp" />
+      </result>
+    </action>
+    <action name="showPagePosts" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listPost.jsp" />
+      </result>
+    </action>
+    <action name="AllDept" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addOrEditStaff.jsp" />
+      </result>
+    </action>
+    <action name="AllDepts" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listStaff.jsp" />
+      </result>
+    </action>
+    <action name="listPost" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="addStaff" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listStaff.jsp" />
+      </result>
+    </action>
+    <action name="listStaff" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listStaff.jsp" />
+      </result>
+    </action>
+    <action name="updateStaff" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="updateStaff.jsp" />
+      </result>
+    </action>
+    <action name="editStaff" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listStaff.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="frame.html" path="/html/frame.html" location="0,0" size="0,0" />
+  <webResource name="login.jsp" path="/html/login.jsp" location="0,0" size="0,0" />
+  <webResource name="updPwd.jsp" path="/html/staff/updPwd.jsp" location="0,0" size="0,0" />
+  <webResource name="listDepartment.jsp" path="/html/department/listDepartment.jsp" location="0,0" size="0,0" />
+  <webResource name="listPost.jsp" path="/html/post/listPost.jsp" location="0,0" size="0,0" />
+  <webResource name="addOrEditPost.jsp" path="/html/post/addOrEditPost.jsp" location="0,0" size="0,0" />
+  <webResource name="addOrEditStaff.jsp" path="/html/staff/addOrEditStaff.jsp" location="0,0" size="0,0" />
+  <webResource name="listStaff.jsp" path="/html/staff/listStaff.jsp" location="0,0" size="0,0" />
+  <webResource name="updateStaff.jsp" path="/html/staff/updateStaff.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

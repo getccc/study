@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+    <package name="graduate" namespace="/graduate"  extends="struts-default">
+    	
+    	<action name="showGraduate" class="com.gh.crm.employment.action.GraduateAction" method="showGraduate" >
+    		<result name="success" >/html/dept/listDept.jsp</result>
+    	</action>
+    	
+    	<action name="addGraduate" class="com.gh.crm.employment.action.GraduateAction" method="addGraduate" >
+    		<result name="success" >/html/dept/listDept.jsp</result>
+    	</action>
+    	
+    </package>
+    
+    
+</struts>

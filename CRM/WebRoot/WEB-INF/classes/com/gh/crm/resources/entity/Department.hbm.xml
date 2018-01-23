@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.gh.crm.resources.entity.Department" table="department" catalog="crm" lazy="false">
+        <id name="depId">
+            <column name="depId" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="depName">
+            <column name="depName" length="50" />
+        </property>
+        
+        <set name="Posts" inverse="true" lazy="false">
+            <key column="depId"></key>
+            <one-to-many class="com.gh.crm.resources.entity.Post"/>
+        </set>
+    </class>
+</hibernate-mapping>
